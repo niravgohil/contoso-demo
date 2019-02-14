@@ -1,0 +1,28 @@
+<FlexboxLayout class="page">
+    <StackLayout *ngIf="!isSubmitButtonClicked">
+        <StackLayout class="form">
+            <Image class="logo" src="~/images/logo.jpeg"></Image>
+
+            <StackLayout class="input-field">
+                <TextField class="input input-border" hint="User Name" [(ngModel)]="user.username" style="border-color: #5C9ACF; padding-left: 12"></TextField>
+            </StackLayout>
+
+            <StackLayout class="input-field">
+                <TextField class="input input-border" hint="Password" secure="true" [(ngModel)]="user.password" style="border-color: #5C9ACF; padding-left: 12"></TextField>
+            </StackLayout>
+
+            <Button text="Log In" (tap)="submit()" class="btn btn-primary m-t-20"></Button>
+
+        </StackLayout>
+        <Label class="login-label sign-up-label" (tap)="goToRegister()">
+            <FormattedString>
+                <Span text="Don’t have an account? "></Span>
+            </FormattedString>
+        </Label>
+    </StackLayout>
+    <StackLayout style="margin:0 auto; margin-top: 250" *ngIf="isSubmitButtonClicked">
+        <ActivityIndicator row="1" #activityIndicator busy="{{isSubmitButtonClicked}}" (busyChange)="onBusyChanged($event)"
+            width="100" height="100" class="activity-indicator"></ActivityIndicator>
+    </StackLayout>
+
+</FlexboxLayout>

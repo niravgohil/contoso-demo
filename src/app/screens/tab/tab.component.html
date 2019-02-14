@@ -1,0 +1,29 @@
+<FlexboxLayout class="page">
+    <ActionBar class="action-bar home-actionbar">
+        <Label class="action-bar-title" text="Home"></Label>
+    </ActionBar>
+    <TabView androidTabsPosition="bottom" [(ngModel)]="tabSelectedIndex" (selectedIndexChanged)="onSelectedIndexChanged($event)"
+        selectedColor="#FF0000" tabBackgroundColor="#A5A5A5">
+        <StackLayout *tabItem="{title: 'home', iconSource: '~/images/home.png'}">
+            <StackLayout class="home-tab">
+                <Image class="logo" src="~/images/logo.jpeg"></Image>
+
+                <StackLayout class="welcome">
+                    <Label text="Welcome to Contoso Adventures App." textWrap="true"></Label>
+                </StackLayout>
+
+                <StackLayout class="welcome bold today">
+                    <Label text="Today is:" textWrap="true"></Label>
+                </StackLayout>
+
+                <StackLayout class="welcome date">
+                    <Label [text]="todayDate | date:'MMMM dd, yyyy hh:mm '" textWrap="true"></Label>
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+        <StackLayout *tabItem="{title: 'logout', iconSource: '~/images/logout.png'}">
+        </StackLayout>
+
+    </TabView>
+</FlexboxLayout>

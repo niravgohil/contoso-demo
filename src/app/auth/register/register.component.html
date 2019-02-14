@@ -1,0 +1,30 @@
+<ActionBar title="Login" class="action-bar" (tap)="goBack()">
+    <NavigationButton android.systemIcon="ic_menu_back" text="Back to ActionBar" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+<FlexboxLayout class="page">
+    <StackLayout class="form" *ngIf="!isSubmitButtonClicked">
+        <Label class="header" text="Registration"></Label>
+
+        <StackLayout class="input-field">
+            <TextField class="input input-border" hint="User Name" autocorrect="false" [(ngModel)]="user.username"
+                style="border-color: #5C9ACF; padding-left: 12"></TextField>
+        </StackLayout>
+
+        <StackLayout class="input-field">
+            <TextField class="input input-border" hint="Email" autocorrect="false" keyboardType="email" autocorrect="false"
+                [(ngModel)]="user.email" style="border-color: #5C9ACF; padding-left: 12" required></TextField>
+        </StackLayout>
+
+        <StackLayout class="input-field">
+            <TextField class="input input-border" hint="Password" secure="true" [(ngModel)]="user.password" style="border-color: #5C9ACF; padding-left: 12"></TextField>
+        </StackLayout>
+
+        <Button text="Register" (tap)="submit()" class="btn btn-primary m-t-20"></Button>
+
+    </StackLayout>
+    <StackLayout style="margin:0 auto; margin-top: 250" *ngIf="isSubmitButtonClicked">
+        <ActivityIndicator row="1" #activityIndicator busy="{{isSubmitButtonClicked}}" (busyChange)="onBusyChanged($event)"
+            width="100" height="100" class="activity-indicator"></ActivityIndicator>
+    </StackLayout>
+
+</FlexboxLayout>

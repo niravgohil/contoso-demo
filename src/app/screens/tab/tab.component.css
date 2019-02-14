@@ -1,0 +1,51 @@
+.page {
+  align-items: center;
+  flex-direction: column;
+  background-color: #F5F5F5;
+}
+
+.home-tab {
+  margin-left: 50;
+  margin-right: 50;
+  flex-grow: 2;
+  vertical-align: middle;
+}
+
+.logo {
+  margin-top: 30;
+  margin-bottom: 30;
+}
+
+.welcome {
+  font-size: 28;
+  color: #000;
+}
+
+.today {
+  margin-top: 40;
+}
+
+.bold {
+  color: #000000;
+  font-weight: 500;
+}
+
+.home-actionbar {
+  background-color: #8395AC;
+  color: #FFF;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 22px;
+}
+
+.logout {
+  float: right !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin-top: 20;
+  padding-top: 20px;
+}
+
+TabView {
+  android-selected-tab-highlight-color: #FFF;
+}
