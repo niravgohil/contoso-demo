@@ -6,6 +6,6 @@ Native Script + angular demo
     https://docs.nativescript.org/angular/start/quick-setup
 - Please check ANDROID_HOME path
 - Please make sure your device is connected to PC
-sh
+```sh
 $ npm install -g nativescript
 $ tns run android
